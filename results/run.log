@@ -1,0 +1,110 @@
+INGEST kappa 10000 1 0.253
+INGEST lambda 10000 1 0.266
+INGEST kappa 10000 2 0.205
+INGEST lambda 10000 2 0.199
+INGEST lambda 10000 3 0.164
+INGEST kappa 10000 3 0.136
+INGEST lambda 50000 1 0.737
+INGEST kappa 50000 1 1.135
+INGEST kappa 50000 2 0.836
+INGEST lambda 50000 2 0.894
+INGEST lambda 50000 3 1.312
+INGEST kappa 50000 3 1.076
+INGEST kappa 100000 1 1.627
+INGEST lambda 100000 1 1.883
+INGEST kappa 100000 2 1.454
+INGEST lambda 100000 2 1.971
+INGEST lambda 100000 3 2.031
+INGEST kappa 100000 3 1.393
+API REST lambda fleet 10 1 228.37 ms
+API GraphQL kappa fleet 1 2 10.9 ms
+API REST lambda fleet 30 2 393.4 ms
+API GraphQL lambda fleet 10 2 388.55 ms
+API REST kappa plate_period 10 1 69.83 ms
+API GraphQL kappa plate_period 1 2 12.05 ms
+API GraphQL lambda fleet 30 2 1081.27 ms
+API GraphQL lambda fleet 1 3 14.42 ms
+API GraphQL kappa fleet 10 1 413.31 ms
+API GraphQL lambda plate_period 30 2 259.31 ms
+API REST kappa plate_period 10 3 144.06 ms
+API GraphQL kappa plate_period 10 2 93.97 ms
+API GraphQL lambda plate_period 30 1 337.47 ms
+API REST kappa fleet 30 1 639.68 ms
+API REST kappa fleet 10 3 225.65 ms
+API REST lambda plate_period 1 1 6.72 ms
+API GraphQL kappa plate_period 1 3 11.69 ms
+API GraphQL lambda fleet 1 1 15.81 ms
+API REST lambda fleet 30 1 689.72 ms
+API GraphQL kappa plate_period 30 2 327.92 ms
+API GraphQL lambda fleet 30 1 890.99 ms
+API GraphQL kappa plate_period 30 1 316.16 ms
+API REST kappa plate_period 30 1 298.45 ms
+API REST lambda plate_period 1 2 8.59 ms
+API GraphQL kappa fleet 30 3 756.77 ms
+API REST lambda fleet 30 3 364.72 ms
+API REST kappa plate_period 1 2 6.96 ms
+API REST kappa fleet 1 2 5.7 ms
+API REST lambda fleet 10 3 185.93 ms
+API REST lambda fleet 1 3 6.45 ms
+API REST kappa fleet 1 3 6.54 ms
+API REST kappa plate_period 1 1 4.32 ms
+API REST lambda plate_period 30 2 238.93 ms
+API GraphQL lambda fleet 1 2 17.56 ms
+API REST kappa plate_period 1 3 7.17 ms
+API REST kappa plate_period 10 2 119.82 ms
+API REST kappa plate_period 30 2 161.46 ms
+API REST kappa plate_period 30 3 196.71 ms
+API GraphQL kappa plate_period 1 1 6.35 ms
+API REST lambda plate_period 10 1 62.58 ms
+API GraphQL kappa plate_period 10 3 105.78 ms
+API REST kappa fleet 30 2 698.09 ms
+API REST lambda fleet 1 2 9.47 ms
+API GraphQL kappa fleet 30 2 842.05 ms
+API GraphQL kappa plate_period 10 1 219.24 ms
+API GraphQL lambda plate_period 10 1 98.9 ms
+API REST lambda fleet 10 2 164.41 ms
+API GraphQL kappa fleet 10 3 236.72 ms
+API GraphQL kappa fleet 30 1 747.11 ms
+API REST lambda plate_period 1 3 6.67 ms
+API REST kappa fleet 10 2 120.4 ms
+API GraphQL kappa fleet 10 2 305.2 ms
+API GraphQL lambda plate_period 1 3 7.97 ms
+API GraphQL lambda fleet 10 3 297.43 ms
+API GraphQL kappa fleet 1 3 148.64 ms
+API REST kappa fleet 1 1 135.94 ms
+API REST lambda plate_period 10 3 206.25 ms
+API GraphQL kappa fleet 1 1 35.06 ms
+API REST kappa fleet 10 1 265.01 ms
+API REST lambda plate_period 30 1 470.58 ms
+API GraphQL lambda plate_period 1 2 12.77 ms
+API REST lambda fleet 1 1 8.17 ms
+API GraphQL kappa plate_period 30 3 362.03 ms
+API REST kappa fleet 30 3 512.9 ms
+API GraphQL lambda fleet 30 3 909.37 ms
+API REST lambda plate_period 30 3 311.6 ms
+API REST lambda plate_period 10 2 116.77 ms
+API GraphQL lambda fleet 10 1 314.92 ms
+API GraphQL lambda plate_period 30 3 282.7 ms
+API GraphQL lambda plate_period 10 3 119.37 ms
+API GraphQL lambda plate_period 10 2 127.6 ms
+API GraphQL lambda plate_period 1 1 13.33 ms
+Traceback (most recent call last):
+  File "/workspace/scratch/6946b1183546/BI_Combustible/benchmark.py", line 126, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/6946b1183546/BI_Combustible/benchmark.py", line 124, in main
+    ingestion(args.repeats,[10000,50000,100000]);asyncio.run(api_bench(args.repeats,args.requests))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6946b1183546/BI_Combustible/benchmark.py", line 106, in api_bench
+    assert not sum(r['errors'] for r in out),'Benchmark includes errors'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Benchmark includes errors

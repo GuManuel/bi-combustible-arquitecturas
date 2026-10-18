@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-10-17T13:48:00.118967+00:00",
+  "python": "3.12.14",
+  "os": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "logical_cpus_visible": 9,
+  "ram_visible_gib": 9.73,
+  "database": "sqlite",
+  "db_version": "3.53.1",
+  "repeats": 3,
+  "requests_per_case": 200,
+  "seed": 2026,
+  "batch_interval": 10000,
+  "chunk_size": 1000,
+  "api_workers": 1,
+  "scope": "single host; preliminary SQLite if selected; CPU application only; RSS lifetime process high-water, not per-case peak; no DB server resource accounting",
+  "versions": {
+    "fastapi": "0.143.3",
+    "uvicorn": "0.54.0",
+    "graphql-core": "3.3.0",
+    "SQLAlchemy": "2.1.5",
+    "psycopg": "3.3.6",
+    "httpx": "0.28.1",
+    "psutil": "7.2.2"
+  }
+}
